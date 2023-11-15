@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Rating Calculator</title>
+</head>
+<body>
+    <h1>Movie Rating Calculator</h1>
+    <form action="/calculate" method="post">
+        <label for="movie_id1">Movie ID 1:</label>
+        <input type="text" name="movie_id1" required>
+        <br>
+        <label for="movie_id2">Movie ID 2:</label>
+        <input type="text" name="movie_id2" required>
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result %}
+        <h2>Calculation Result:</h2>
+        <p>Manhattan Distance: {{ result.manhattan }}</p>
+        <p>Euclidean Distance: {{ result.euclidean }}</p>
+        <p>Minkowski Distance: {{ result.minkowski }}</p>
+        <p>Pearson Correlation: {{ result.pearson }}</p>
+        <p>Cosine Similarity: {{ result.cosine }}</p>
+    {% endif %}
+</body>
+</html>
